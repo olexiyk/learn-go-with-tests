@@ -28,7 +28,7 @@ func (d Dictionary) Add(word, definition string) error {
 func (d Dictionary) Update(word, definition string) error {
 	_, err := d.Search(word)
 	if err == ErrNotFound {
-		return ErrWordExists
+		return ErrWordDoesNotExist
 	}
 	d[word] = definition
 	return nil
